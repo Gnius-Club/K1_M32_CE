@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook - Misión 32</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #5DADE2; /* Azul Gnius */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+        .banner {
+            background-color: #85C1E9; /* Azul más claro */
+            color: #333;
+            padding: 15px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .banner:hover {
+            background-color: #AED6F1;
+        }
+        .banner .title {
+            font-size: 1.3em;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 8px;
+            border-top: 1px solid #fff;
+            padding-top: 8px;
+            color: #1A5276; /* Azul oscuro texto */
+        }
+        .content {
+            display: none;
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            background-color: #EAF2F8; /* Azul muy claro fondo */
+            border-radius: 5px;
+        }
+        .dialogue {
+            background-color: #FEF9E7; /* Amarillo pálido para diálogo */
+            border: 1px solid #FAD7A0;
+            border-radius: 10px;
+            padding: 10px 15px;
+            margin: 15px 0;
+            text-align: left; /* Cambiado a izquierda para mejor lectura */
+            font-style: italic;
+            color: #784212; /* Marrón oscuro texto */
+            position: relative; /* Para el bocadillo */
+            border-left: 5px solid #F39C12; /* Naranja */
+        }
+
+        .dropdown {
+            margin-bottom: 25px;
+            text-align: center; /* Centrar dropdown */
+        }
+        .dropdown label {
+            font-weight: bold;
+            color: #1A5276;
+        }
+        .dropdown select {
+            font-size: 1.1em;
+            padding: 8px 12px;
+            margin-left: 10px;
+            border-radius: 5px;
+            border: 1px solid #85C1E9;
+        }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px;}
+        td { padding: 12px; border: 1px solid #AED6F1; vertical-align: top; }
+        td strong { color: #1A5276; }
+        .level-title { /* Clase específica para el título del nivel */
+             text-align: center;
+             color: #5DADE2;
+             font-size: 1.4em;
+             margin-bottom: 20px;
+        }
+        /* Clases para ocultar/mostrar contenido por nivel */
+        .k1-content, .k2-content, .k3-content { display: none; }
+         .activity.active .banner {
+             background-color: #AED6F1; /* Slightly different color when active */
+         }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Playbook - Misión 32: ¡Clasificando Carga de Colores!</h1>
+        </div>
+
+        <div class="dropdown">
+            <label for="class-level">Nivel:</label>
+            <select id="class-level" onchange="updateContent()">
+                <option value="K1">K1 (3 años)</option>
+                <option value="K2">K2 (4 años)</option>
+                <option value="K3">K3 (5 años)</option>
+            </select>
+        </div>
+
+        <h2 id="selected-level" class="level-title">Nivel: K1 (3 años)</h2>
+
+        <!-- ............................................Aquí empezarán las actividades........................................... -->
+
+<!-- Actividad 0: Revisión de Materiales -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_materiales')">
+        <div class="title">📚 Actividad 0: Revisión de Materiales</div>
+        <div class="subtitle">Objetivo: Asegurarse de que todos los materiales necesarios para la clase estén disponibles y preparados antes de que lleguen los niños.</div>
+    </div>
+    <div id="revision_materiales" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (N/A):</strong> Revisa que tengas listos los materiales indicados en la **DIAPOSITIVA 1**: 1 Set LEGO Coding Express (tren, vías rectas, vías curvas, ladrillos de acción rojo, azul, amarillo) y 10 iBricks por cada pareja.</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 1: Bienvenida e Introducción -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('bienvenida')">
+        <div class="title">🎉 Actividad 1: ¡El Tren Repartidor! ⏰ Tiempo: 1 minuto</div>
+        <div class="subtitle">Objetivo: Introducir el concepto de clasificación y reglas diferentes según el tipo de objeto (color).</div>
+    </div>
+    <div id="bienvenida" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 2** “Bienvenida”. Saluda al CODE SQUAD y pregunta si alguna vez han ordenado juguetes por color o tipo.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡Hola, organizadores expertos del CODE SQUAD! ¿Alguna vez han ordenado sus bloques por color? ¿O separado los coches de las muñecas? ¡Eso es clasificar! ¡Poner cada cosa en su lugar! ¡Pues hoy, nuestro Coding Express tiene un trabajo muy importante de clasificación!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 3** "Gimnasio CODE SQUAD". Explica que clasificar requiere seguir reglas: "Si es de este color, va aquí; si es de otro color, va allá".</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Para clasificar bien, hay que seguir reglas! Como: '**Si** la pieza es ROJA, va en la caja ROJA. **Si** es AZUL, va en la caja AZUL'. ¡Nuestro cerebro necesita estar súper atento a esas reglas de 'Si... entonces...'! ¡Vamos al Gimnasio Cerebral para practicar cómo seguir diferentes reglas según lo que veamos!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 2: Baile de Algoritmos -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('baile-algoritmos')">
+        <div class="title">🎶 Actividad 2: Baile de Algoritmos ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Objetivo: Practicar el seguimiento de secuencias, importante para ejecutar los pasos antes de la acción de clasificación.</div>
+    </div>
+    <div id="baile-algoritmos" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 4** “Baile de Algoritmos”. Guía el baile, recordando que cada paso lleva al siguiente.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡A bailar, clasificadores! ¡Este baile nos recuerda que todo tiene un orden! ¡Un paso, luego otro, luego otro! ¡Como cuando seguimos las reglas para ordenar! ¡Sigan la música y la secuencia! ¡Prepárense para clasificar!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 3: Planteamiento del Problema - La Carga de Colores -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('planteamiento-problema')">
+        <div class="title">🚦 Actividad 3: ¡El Depósito de Carga Colorida! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Presentar la historia del depósito de carga, la necesidad de tratar diferente cada color y el rol de los ladrillos de acción como indicadores del tipo de carga.</div>
+    </div>
+    <div id="planteamiento-problema" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 5**. Narra la historia del trabajo del Coding Express en el Depósito de Carga Colorida.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡CODE SQUAD! ¡Nuestro Coding Express tiene un nuevo trabajo en el súper moderno 'Depósito de Carga Colorida'! ¡Aquí llegan paquetes de todos los colores! ¡Rojos, azules, amarillos! ¡Y cada color significa algo diferente! ¡Es un lugar muy ocupado!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 6**. Explica el reto: cada color de carga (representado por un ladrillo de acción) necesita una acción diferente en su estación designada (marcada con iBricks).</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Aquí está el desafío! ¡No toda la carga se trata igual! La carga ROJA es muy frágil, ¡así que el tren debe PARAR suavemente en su estación! La carga AZUL es ruidosa, ¡así que el tren debe TOCAR LA BOCINA al llegar a su estación! (Y quizás la AMARILLA es especial y necesita una LUZ). ¡Nuestro reto es programar al Coding Express para que haga la acción CORRECTA según el color del ladrillo (la carga) que encuentre en la vía! ¡Vamos a usar los ladrillos de acción para decirle al tren qué tipo de carga es y qué hacer!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4: Formación de Parejas -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('formacion-parejas')">
+        <div class="title">🤝 Actividad 4: ¡Equipos de Logística! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Formar parejas para diseñar la vía, definir las estaciones y programar las acciones de clasificación.</div>
+    </div>
+    <div id="formacion-parejas" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 7** “Formación de Equipos”. Explica que organizar un depósito requiere buena comunicación y trabajo en equipo. Forma las parejas.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Organizar toda esta carga de colores necesita un equipo muy coordinado! ¡Como los expertos en logística! ¡Trabajando juntos pueden decidir dónde poner las estaciones y qué regla seguir para cada color! ¡Formen sus Equipos de Logística para poner orden en este depósito!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Verifica que todos tengan pareja. Anímales a preparar su espacio para construir las vías y las estaciones de clasificación con los iBricks.</td>
+                <td>
+                     <div class="dialogue">
+                        "¿Equipos de Logística listos? ¡Genial! Preparen su espacio. Necesitarán vías para el recorrido del tren, ladrillos de acción para indicar el tipo de carga, ¡y los bloques gigantes para construir las Estaciones de Clasificación! ¡Manos a la obra!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5: Reto de Codificación - ¡Programa la Clasificadora! -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('reto-codificacion')">
+        <div class="title">⚙️ Actividad 5: ¡Construyendo la Vía de Clasificación! ⏰ Tiempo: 7 minutos</div>
+        <div class="subtitle">Objetivo: Construir la vía con estaciones marcadas por iBricks y preparar los ladrillos de acción para probar las reglas de clasificación.</div>
+    </div>
+    <div id="reto-codificacion" class="content">
+        <table>
+             <!-- Paso Común: Explicar las Reglas de Color -->
+             <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 8** "¡Las Reglas de Colores!". Repasa las reglas: LADRILLO ROJO = PARAR, LADRILLO AZUL = SONAR, (K3: LADRILLO AMARILLO = LUZ).</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Atención, equipos! ¡Recordemos las reglas importantes del depósito! **Si** el tren ve un ladrillo ROJO, ¿qué hace? (Espera respuesta: ¡PARAR!). ¡Muy bien! **Si** ve un ladrillo AZUL, ¿qué hace? (Espera respuesta: ¡SONAR/BOCINA!). (Solo K3: ¡Y **si** ve uno AMARILLO? ¡LUZ!). ¡Perfecto! ¡Con estas reglas, vamos a construir!"
+                    </div>
+                </td>
+            </tr>
+            <!-- Contenido Específico por Nivel -->
+             <!-- K1 -->
+            <tr class="k1-content">
+                <td><strong>PASO 2 - K1 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 9** "Prueba K1: Rojo y Azul". Guía para construir una vía recta simple (2-3 tramos). Probar PRIMERO colocando solo el ladrillo ROJO y empujando el tren (observar parada). LUEGO, quitar el rojo, poner SOLO el AZUL y probar de nuevo (observar sonido).</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipo K1! Construyan un camino recto con 2 o 3 vías. ¡Ahora, la prueba! **Primero**, pongan SOLO el ladrillo ROJO en medio de la vía. Pongan el tren al inicio y ¡empujón! ¿Qué hizo? (¡Paró!). ¡Genial! **Ahora**, quiten el ladrillo rojo. Pongan SOLO el ladrillo AZUL en el mismo lugar. ¡Prueben de nuevo! Tren al inicio y ¡empujón! ¿Qué hizo ahora? (¡Sonó!). ¡Increíble! ¡Cada color le dice algo diferente!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K2 -->
+             <tr class="k2-content">
+                 <td><strong>PASO 2 - K2 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 10** "Vía K2: Dos Estaciones". Guía para construir vía recta (4 tramos). Usar 2 iBricks para marcar "Estación A" y 2 para "Estación B". Probar: Poner ROJO justo antes de Estación A -> empujar tren (observar parada en A). Quitar rojo. Poner AZUL justo antes de Estación B -> empujar tren (observar sonido en B).</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipos K2! ¡Vamos a construir el depósito! Hagan una vía recta larga (4 vías). Ahora, usen 2 bloques para marcar la 'Estación A' cerca del final. Y un poco más allá, usen otros 2 bloques para la 'Estación B'. ¡Listos para probar las reglas! **Primero**, pongan el ladrillo ROJO justo antes de la Estación A. ¡Empujen el tren! ¿Paró en la Estación A? ¡Perfecto! **Ahora**, quiten el rojo. Pongan el ladrillo AZUL justo antes de la Estación B. ¡Empujen el tren! ¿Sonó al llegar a la Estación B? ¡Magnífico! ¡El tren sabe dónde hacer cada cosa!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K3 -->
+             <tr class="k3-content">
+                 <td><strong>PASO 2 - K3 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 11** "Vía K3: Tres Estaciones con Curva". Guía para construir vía con 1 curva (recta-curva-recta-recta). Marcar 3 estaciones (A, B, C) con iBricks. Probar: ROJO antes de A (parar), AZUL antes de B (sonar), AMARILLO antes de C (luz). Probar cada regla por separado.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Expertos K3! ¡Su depósito es más complejo! Construyan una vía con una curva (recta, curva, recta, recta). Marquen TRES estaciones con bloques: Estación A, Estación B y Estación C a lo largo del camino. ¡Vamos a probar las 3 reglas! **Prueba 1:** Pongan el ladrillo ROJO antes de A. ¡Empujen! ¿Paró en A? ¡Bien! Quiten el rojo. **Prueba 2:** Pongan el AZUL antes de B. ¡Empujen! ¿Sonó en B? ¡Excelente! Quiten el azul. **Prueba 3:** Pongan el AMARILLO antes de C. ¡Empujen! ¿Encendió su luz en C? ¡Fabuloso! ¡Nuestro tren es un clasificador experto!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 6: ¡Clasificación Exitosa! -->
+<div id="activity-6" class="activity">
+    <div class="banner" onclick="toggleContent('probando-clasificacion')">
+        <div class="title">✅ Actividad 6: ¡Verificando la Clasificación! ⏰ Tiempo: 7 minutos</div>
+        <div class="subtitle">Objetivo: Ejecutar las secuencias programadas para cada "tipo de carga" (ladrillo) y confirmar que el tren realiza la acción correcta en el lugar designado (si aplica por nivel).</div>
+    </div>
+    <div id="probando-clasificacion" class="content">
+        <table>
+             <!-- K1 -->
+            <tr class="k1-content">
+                <td><strong>PASO 1 - K1 (7 minutos):</strong> Reproduce la **DIAPOSITIVA 12** "¡Éxito K1!". Permitir que prueben libremente poner el ladrillo rojo o el azul y observar la acción correspondiente varias veces. Reforzar "Rojo hace esto, Azul hace esto otro".</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipo K1! ¡Ahora pueden jugar a ser los jefes del depósito! Pongan el ladrillo ROJO en la vía. ¡Empujen el tren! ¿Qué hizo? (Paró). ¡Correcto! Quiten el rojo. Pongan el AZUL. ¡Empujen! ¿Qué hizo? (Sonó). ¡Correcto! ¡Pueden probarlo las veces que quieran! ¡Están controlando al tren con los colores!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K2 -->
+             <tr class="k2-content">
+                 <td><strong>PASO 1 - K2 (7 minutos):</strong> Reproduce la **DIAPOSITIVA 13** "¡Éxito K2!". Permitir que prueben poner el rojo antes de A y el azul antes de B varias veces, verificando que la acción ocurra en la estación correcta. Pueden intentar poner ambos ladrillos a la vez (observar qué pasa).</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipos K2! ¡Demuestren su control del depósito! Pongan el ROJO antes de A. ¡Prueben! (Debe parar en A). Pongan el AZUL antes de B. ¡Prueben! (Debe sonar en B). ¡Funciona! ¿Qué creen que pasaría si ponen los dos ladrillos en la vía, primero el azul y luego el rojo? ¡Inténtenlo y vean qué hace el tren! ¡Están experimentando!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K3 -->
+             <tr class="k3-content">
+                 <td><strong>PASO 1 - K3 (7 minutos):</strong> Reproduce la **DIAPOSITIVA 14** "¡Éxito K3!". Permitir que prueben las 3 reglas (Rojo->Parar en A, Azul->Sonar en B, Amarillo->Luz en C) varias veces. Pueden experimentar poniendo los ladrillos en diferente orden o más de uno.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Expertos K3! ¡Es hora de la demostración final! Prueben cada regla: Rojo en A, Azul en B, Amarillo en C. ¡Verifiquen que el tren hace lo correcto en cada estación! ¿Y si ponen los ladrillos en otro orden? ¿Amarillo primero, luego rojo, luego azul? ¿Qué hará el tren? ¡Experimenten y descubran! ¡Son los directores de este depósito!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 7 OMITIDA -->
+
+<!-- Actividad 8: Conclusión y Reflexión -->
+<div id="activity-8" class="activity">
+    <div class="banner" onclick="toggleContent('conclusion-reflexion')">
+        <div class="title">🏁 Actividad 8: ¡Depósito Organizado! ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Objetivo: Celebrar el éxito en la clasificación, reforzar la lógica condicional ("Si color X, entonces acción Y") y conectar con situaciones reales de clasificación.</div>
+    </div>
+    <div id="conclusion-reflexion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 15** "¡Misión Cumplida!". Reúne al grupo, felicita por organizar la carga. Realiza preguntas de reflexión sobre las reglas de color.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡FANTÁSTICO trabajo, CODE SQUAD! ¡Han organizado perfectamente el Depósito de Carga Colorida! ¡Nuestro Coding Express ahora sabe exactamente qué hacer con cada tipo de carga gracias a ustedes! ¡Misión cumplida! Pensemos en cómo lo hicimos:
+1. ¿Qué le decía cada color de ladrillo al tren? (Rojo le decía..., Azul le decía..., Amarillo le decía...)
+2. ¿Era importante dónde poníamos el ladrillo en la vía? (¡Sí, para que hiciera la acción en la estación correcta!)
+3. ¿Usamos reglas como '**Si** veo este color, **entonces** hago esta acción'? (¡Sí!) ¿Dónde más usamos reglas así para ordenar cosas? (¡Guardar juguetes, separar ropa!)
+¡Hoy aprendimos a usar códigos de colores para darle diferentes instrucciones a nuestro tren! ¡Es como enseñarle a tomar decisiones! ¡Son genios de la lógica y la organización! ¡Hasta la próxima misión!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+        <!-- ............................................Aquí terminarán las actividades........................................... -->
+
+    </div>
+
+<script>
+    function toggleContent(id) {
+        var content = document.getElementById(id);
+        var parentActivity = content.closest('.activity'); // Encuentra el contenedor de la actividad
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            parentActivity.classList.remove('active'); // Remueve clase activa si se cierra
+        } else {
+             // Opcional: Cierra otros contenidos abiertos antes de abrir uno nuevo
+             // closeAllContents();
+            content.style.display = "block";
+            parentActivity.classList.add('active'); // Añade clase activa si se abre
+        }
+    }
+
+    // Función opcional para cerrar todos los demás contenidos al abrir uno
+    /*
+    function closeAllContents() {
+        var allContents = document.querySelectorAll('.content');
+        var allActivities = document.querySelectorAll('.activity');
+        allContents.forEach(function(content) {
+            content.style.display = 'none';
+        });
+         allActivities.forEach(function(activity) {
+             activity.classList.remove('active');
+         });
+    }
+    */
+
+    function updateContent() {
+        var level = document.getElementById("class-level").value;
+        // Actualiza el texto del título H2
+        var levelText = document.getElementById("class-level").options[document.getElementById("class-level").selectedIndex].text;
+        document.getElementById("selected-level").innerText = "Nivel: " + levelText;
+
+        // Oculta todas las filas de contenido específico de nivel primero
+        var k1Contents = document.querySelectorAll('.k1-content');
+        var k2Contents = document.querySelectorAll('.k2-content');
+        var k3Contents = document.querySelectorAll('.k3-content');
+
+        k1Contents.forEach(function(el) { el.style.display = 'none'; });
+        k2Contents.forEach(function(el) { el.style.display = 'none'; });
+        k3Contents.forEach(function(el) { el.style.display = 'none'; });
+
+        // Muestra solo las filas del nivel seleccionado
+        // Usamos 'table-row' porque estamos mostrando/ocultando filas de tabla (<tr>)
+        var selectedContents = document.querySelectorAll('.' + level.toLowerCase() + '-content');
+        selectedContents.forEach(function(el) {
+             // Importante: Necesitamos asegurarnos de que el display sea correcto para filas de tabla
+             if (el.tagName === 'TR') {
+                 el.style.display = 'table-row';
+             } else {
+                 // Si por alguna razón hay otros elementos, usar 'block' o ajustar según sea necesario
+                 el.style.display = 'block';
+             }
+        });
+    }
+
+    // Asegura que updateContent se ejecute cuando la página cargue
+    document.addEventListener('DOMContentLoaded', function() {
+        updateContent();
+    });
+</script>
+
+</body>
+</html>
